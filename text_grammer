@@ -1,0 +1,13 @@
+while True:
+    prompt=input("Ask Me What you want to know")
+    response = openai.Completion.create(
+    model="text-davinci-003",
+    prompt=prompt,
+    temperature=0,
+    max_tokens=500,
+    # top_p=1,
+    # frequency_penalty=0,
+    # presence_penalty=0
+    )
+    ans=response.choices
+    print(ans[0].text)
